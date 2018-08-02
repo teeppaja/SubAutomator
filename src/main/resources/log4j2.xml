@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{DD.MM.YYYY HH:mm:ss.SSS} %-5level %logger{1}: %msg%n"/>
+    </Console>
+	<File name="File" fileName="log/subAutomator.log" immediateFlush="false">
+		<PatternLayout>
+			<Pattern>%d{dd.MM.yyyy HH:mm:ss:SSS} %-5level %logger{1}: %msg%n</Pattern>
+		</PatternLayout>
+	</File>
+	<Async name="Async">
+		<AppenderRef ref="File"/>
+	</Async>
+  </Appenders>
+  <Loggers>
+    <Root level="debug">
+      <AppenderRef ref="Async"/>
+      <AppenderRef ref="Console" />
+    </Root>
+  </Loggers>
+</Configuration>
